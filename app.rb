@@ -6,9 +6,10 @@ class App < Sinatra::Base
     end
 
     post '/reverse' do
-      original_string = params["string"]
-      @reversed_string = original_string.reverse
-      #Instance variables allow us to bypass scope between the various methods in a class.
+      puts params 
+      # original_string = params["string"]
+      # @reversed_string = original_string.reverse
+      # #Instance variables allow us to bypass scope between the various methods in a class.
       erb :reversed
     end
 
