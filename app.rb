@@ -1,14 +1,21 @@
 require_relative 'config/environment'
 
 class App < Sinatra::Base
+  
+  get "/" do
+   @user = "Ian"
+ 
+   erb :index # @user will be defined as 'Ian' in the view
+  end
+    
     get '/reverse' do
      erb :reverse
     end
 
     post '/reverse' do
       puts params 
-      # original_string = params["string"]
-      # @reversed_string = original_string.reverse
+      original_string = params["string"]
+       @reversed_string = original_string.reverse
       # #Instance variables allow us to bypass scope between the various methods in a class.
       erb :reversed
     end
